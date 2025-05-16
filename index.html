@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enviro - Professional Pest Control Services</title>
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/google-fonts/1.0.0/css/google-fonts.min.css" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-light">
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand d-flex align-items-center" href="#">
+        <img src="assets/enviro.png" 
+             class="me-2 rounded-circle bg-white border border-2 shadow-sm" 
+             alt="Enviro Pest Control logo with green leaf and target symbol, modern and friendly, on white background" 
+             style="width: 40px; height: 40px; object-fit: contain; padding: 2px;">
+        <span>Enviro Pest-Control</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active" href="#"><i class="fas fa-home me-1"></i> Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#services"><i class="fas fa-bug me-1"></i> Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#about"><i class="fas fa-info-circle me-1"></i> About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact"><i class="fas fa-phone me-1"></i> Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6">
+          <h1 class="display-4 fw-bold text-white">Professional Pest Control Management</h1>
+          <p class="lead text-white-50">Efficiently manage pest control services with our comprehensive solution</p>
+          <div class="d-flex gap-3 mt-4">
+            <a href="#portals" class="btn btn-primary btn-lg"><i class="fas fa-sign-in-alt me-2"></i>Get Started</a>
+            <a href="#services" class="btn btn-outline-light btn-lg"><i class="fas fa-info-circle me-2"></i>Learn More</a>
+          </div>
+        </div>
+        <div class="col-lg-6 d-none d-lg-block">
+          <img src="assets/enviropersonel.png" class="img-fluid rounded-3 shadow-lg d-block mx-auto" style="max-width: 400px; height: auto;" alt="Professional pest control technician spraying in modern flat style">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portal Section -->
+  <section class="py-5" id="portals">
+    <div class="container">
+      <div class="section-header text-center mb-5">
+        <h2 class="fw-bold">Choose Your Portal</h2>
+        <p class="text-muted">Access our system based on your role</p>
+      </div>
+      
+      <div class="row g-4 justify-content-center">
+        <!-- Customer Portal Card -->
+        <div class="col-md-6 col-lg-5">
+          <div class="portal-card customer">
+            <div class="card-icon">
+              <i class="fas fa-user"></i>
+            </div>
+            <h3>Customer Portal</h3>
+            <p>Schedule new appointments or check the status of your existing service requests</p>
+            <ul class="feature-list">
+              <li><i class="fas fa-check-circle"></i> Schedule treatments</li>
+              <li><i class="fas fa-check-circle"></i> View appointments</li>
+              <li><i class="fas fa-check-circle"></i> Update contact information</li>
+            </ul>
+            <a href="customer.html" class="btn btn-primary btn-lg mt-3 w-100">
+              <i class="fas fa-sign-in-alt me-2"></i>Enter Portal
+            </a>
+          </div>
+        </div>
+        
+        <!-- Admin Portal Card -->
+        <div class="col-md-6 col-lg-5">
+          <div class="portal-card admin">
+            <div class="card-icon">
+              <i class="fas fa-shield-alt"></i>
+            </div>
+            <h3>Admin Portal</h3>
+            <p>Manage service appointments, technician schedules, and customer information</p>
+            <ul class="feature-list">
+              <li><i class="fas fa-check-circle"></i> Process appointment requests</li>
+              <li><i class="fas fa-check-circle"></i> Assign technicians</li>
+              <li><i class="fas fa-check-circle"></i> View service history</li>
+            </ul>
+            <a href="admin.html" class="btn btn-secondary btn-lg mt-3 w-100">
+              <i class="fas fa-lock me-2"></i>Admin Access
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="py-5 bg-light" id="services">
+    <div class="container">
+      <div class="section-header text-center mb-5">
+        <h2 class="fw-bold">Our Services</h2>
+        <p class="text-muted">Comprehensive pest control solutions for your needs</p>
+      </div>
+      
+      <div class="row g-4">
+        <!-- Service Card 1 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-spider"></i>
+            </div>
+            <h4>General Pest Control</h4>
+            <p>Comprehensive treatment for common household pests including ants, roaches, spiders, and more</p>
+          </div>
+        </div>
+        
+        <!-- Service Card 2 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-bug"></i>
+            </div>
+            <h4>Termite Treatment</h4>
+            <p>Specialized treatments to eliminate and prevent termite infestations and protect your property</p>
+          </div>
+        </div>
+        
+        <!-- Service Card 3 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-disease"></i>
+            </div>
+            <h4>Rodent Control</h4>
+            <p>Effective solutions for mice, rats and other rodents with preventative measures</p>
+          </div>
+        </div>
+        
+        <!-- Service Card 4 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-mosquito"></i>
+            </div>
+            <h4>Mosquito Treatment</h4>
+            <p>Yard treatments to reduce mosquito populations and create a more comfortable outdoor space</p>
+          </div>
+        </div>
+        
+        <!-- Service Card 5 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-bed"></i>
+            </div>
+            <h4>Bed Bug Treatment</h4>
+            <p>Specialized treatments to eliminate bed bug infestations from your home or business</p>
+          </div>
+        </div>
+        
+        <!-- Service Card 6 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-clipboard-check"></i>
+            </div>
+            <h4>Commercial Services</h4>
+            <p>Customized pest management solutions for businesses, restaurants, and facilities</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="py-5" id="about">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6 mb-4 mb-lg-0">
+          <img src="assets/enviro.png" class="img-fluid rounded-3 shadow" alt="About PestGuard Pro">
+        </div>
+        <div class="col-lg-6">
+          <div class="section-header mb-4">
+            <h2 class="fw-bold">About PestGuard Pro</h2>
+            <p class="text-muted">Your partner in effective pest management</p>
+          </div>
+          <p>PestGuard Pro is a comprehensive pest control management system designed to streamline operations for pest control businesses while providing exceptional service to customers.</p>
+          <p>Our platform connects customers with certified technicians, enabling efficient scheduling, treatment tracking, and follow-up services.</p>
+          <div class="d-flex flex-column flex-md-row gap-3 mt-4">
+            <div class="stats-item">
+              <div class="stats-value">10,000+</div>
+              <div class="stats-label">Satisfied Customers</div>
+            </div>
+            <div class="stats-item">
+              <div class="stats-value">25+</div>
+              <div class="stats-label">Years Experience</div>
+            </div>
+            <div class="stats-item">
+              <div class="stats-value">99%</div>
+              <div class="stats-label">Success Rate</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <div class="section-header text-center mb-5">
+        <h2 class="fw-bold">What Our Clients Say</h2>
+        <p class="text-muted">Testimonials from satisfied customers</p>
+      </div>
+      
+      <div class="row g-4">
+        <!-- Testimonial 1 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="testimonial-card">
+            <div class="rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <p class="testimonial-text">"The scheduling system is so easy to use! I was able to book my appointment in under a minute and the technician arrived exactly on time."</p>
+            <div class="testimonial-author">
+              <div class="author-avatar">
+                <img src="/api/placeholder/50/50" alt="Customer">
+              </div>
+              <div>
+                <h5>PLACE HOLDER</h5>
+                <span>Homeowner</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Testimonial 2 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="testimonial-card">
+            <div class="rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <p class="testimonial-text">"As a business owner, I appreciate how efficiently the admin portal lets me manage all our property treatments in one place. Excellent system!"</p>
+            <div class="testimonial-author">
+              <div class="author-avatar">
+                <img src="/api/placeholder/50/50" alt="Customer">
+              </div>
+              <div>
+                <h5>PLACE HOLDER</h5>
+                <span>Restaurant Owner</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Testimonial 3 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="testimonial-card">
+            <div class="rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+            </div>
+            <p class="testimonial-text">"I love that I can check the status of my appointment anytime. The technician was professional and the service was excellent!"</p>
+            <div class="testimonial-author">
+              <div class="author-avatar">
+                <img src="/api/placeholder/50/50" alt="Customer">
+              </div>
+              <div>
+                <h5>PLACE HOLDER</h5>
+                <span>Property Manager</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="py-5" id="contact">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="section-header text-center mb-5">
+            <h2 class="fw-bold">Contact Us</h2>
+            <p class="text-muted">Get in touch with our support team</p>
+          </div>
+          
+          <div class="contact-card">
+            <div class="row">
+              <div class="col-md-5">
+                <div class="contact-info">
+                  <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                      <h5>Address</h5>
+                      <p>Eusebio Ave. SLR Homes,<br>Molino VII, Bacoor, Philippines</p>
+                    </div>
+                  </div>
+                  <div class="contact-item">
+                    <i class="fas fa-phone-alt"></i>
+                    <div>
+                      <h5>Phone</h5>
+                      <p>(+63) 0917 138 7378</p>
+                    </div>
+                  </div>
+                  <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                      <h5>Email</h5>
+                      <p>envirophilippines@gmail.com/p>
+                    </div>
+                  </div>
+                  <div class="contact-item">
+                    <i class="fas fa-clock"></i>
+                    <div>
+                      <h5>Hours</h5>
+                      <p>Monday - Friday: 8AM - 6PM<br>Saturday: 9AM - 2PM</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-7">
+                <form class="contact-form">
+                  <div class="mb-3">
+                    <label for="name" class="form-label">Full Name</label>
+                    <input type="text" class="form-control" id="name" placeholder="Your name">
+                  </div>
+                  <div class="mb-3">
+                    <label for="email" class="form-label">Email Address</label>
+                    <input type="email" class="form-control" id="email" placeholder="Your email">
+                  </div>
+                  <div class="mb-3">
+                    <label for="subject" class="form-label">Subject</label>
+                    <input type="text" class="form-control" id="subject" placeholder="Subject">
+                  </div>
+                  <div class="mb-3">
+                    <label for="message" class="form-label">Message</label>
+                    <textarea class="form-control" id="message" rows="4" placeholder="Your message"></textarea>
+                  </div>
+                  <button type="submit" class="btn btn-primary btn-lg w-100">
+                    <i class="fas fa-paper-plane me-2"></i>Send Message
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row gy-4">
+        <div class="col-lg-4">
+          <div class="footer-brand d-flex align-items-center mb-3">
+            <i class="fas fa-shield-virus me-2"></i>
+            <span>PestGuard Pro</span>
+          </div>
+          <p class="text-white-50">Professional pest control management system streamlining operations for pest control businesses while delivering exceptional customer service.</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        <div class="col-lg-2 col-6">
+          <h5>Quick Links</h5>
+          <ul class="footer-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#portals">Portals</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-2 col-6">
+          <h5>Services</h5>
+          <ul class="footer-links">
+            <li><a href="#">General Pest Control</a></li>
+            <li><a href="#">Termite Treatment</a></li>
+            <li><a href="#">Rodent Control</a></li>
+            <li><a href="#">Mosquito Treatment</a></li>
+            <li><a href="#">Bed Bug Treatment</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-4">
+          <h5>Newsletter</h5>
+          <p class="text-white-50">Subscribe to receive updates and promotions</p>
+          <form class="newsletter-form">
+            <div class="input-group mb-3">
+              <input type="email" class="form-control" placeholder="Your email address">
+              <button class="btn btn-primary" type="submit">Subscribe</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <hr class="footer-divider">
+      <div class="text-center text-white-50">
+        <p>&copy; 2025 PestGuard Pro. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+  <!-- Custom JS -->
+  <script src="script.js"></script>
+</body>
+</html>

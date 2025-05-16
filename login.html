@@ -1,0 +1,202 @@
+ <!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Login - Pest Control Services</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .auth-container {
+      max-width: 400px;
+      margin: 50px auto;
+      padding: 20px;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    .auth-tabs {
+      display: flex;
+      margin-bottom: 20px;
+    }
+    .auth-tab {
+      flex: 1;
+      padding: 10px;
+      text-align: center;
+      background-color: #f5f5f5;
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+    }
+    .auth-tab.active {
+      background-color: white;
+      border-bottom: 2px solid #4CAF50;
+    }
+    .auth-form {
+      display: none;
+    }
+    .auth-form.active {
+      display: block;
+    }
+    .form-group {
+      margin-bottom: 15px;
+    }
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+    .error-message {
+      color: #f44336;
+      margin-top: 10px;
+      font-size: 14px;
+    }
+    .success-message {
+      color: #4CAF50;
+      margin-top: 10px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <button class="btn back-btn" onclick="window.location.href='index.html'">Back to Home</button>
+    <h1>Pest Control Services</h1>
+    
+    <div class="auth-container">
+      <div class="auth-tabs">
+        <div class="auth-tab active" data-tab="login">Login</div>
+        <div class="auth-tab" data-tab="register">Register</div>
+      </div>
+      
+      <div class="auth-form active" id="login-form">
+        <h2>Login to Your Account</h2>
+        <form id="loginForm">
+          <div class="form-group">
+            <label for="login-email">Email:</label>
+            <input type="email" id="login-email" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="login-password">Password:</label>
+            <input type="password" id="login-password" required>
+          </div>
+          
+          <button type="submit" class="btn">Login</button>
+          <p id="login-error" class="error-message"></p>
+        </form>
+      </div>
+      
+      <div class="auth-form" id="register-form">
+        <h2>Create a New Account</h2>
+        <form id="registerForm">
+          <div class="form-group">
+            <label for="register-name">Full Name:</label>
+            <input type="text" id="register-name" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="register-email">Email:</label>
+            <input type="email" id="register-email" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="register-password">Password:</label>
+            <input type="password" id="register-password" required minlength="6">
+          </div>
+          
+          <div class="form-group">
+            <label for="register-confirm">Confirm Password:</label>
+            <input type="password" id="register-confirm" required>
+          </div>
+          
+          <button type="submit" class="btn">Register</button>
+          <p id="register-message" class=""></p>
+        </form>
+      </div>
+    </div>
+  </div>
+  
+  <script src="db.js"></script>
+  <script>
+    // Switch between login and register tabs
+    const tabs = document.querySelectorAll('.auth-tab');
+    tabs.forEach(tab => {
+      tab.addEventListener('click', function() {
+        // Remove active class from all tabs and forms
+        document.querySelectorAll('.auth-tab').forEach(t => t.classList.remove('active'));
+        document.querySelectorAll('.auth-form').forEach(f => f.classList.remove('active'));
+        
+        // Add active class to clicked tab and corresponding form
+        this.classList.add('active');
+        document.getElementById(this.dataset.tab + '-form').classList.add('active');
+      });
+    });
+    
+    // Handle login form submission
+    document.getElementById('loginForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const email = document.getElementById('login-email').value;
+      const password = document.getElementById('login-password').value;
+      
+      const result = DB.authenticateUser(email, password);
+      
+      if (result.success) {
+        // Redirect based on user role
+        if (result.user.role === 'admin') {
+          window.location.href = 'admin.html';
+        } else {
+          window.location.href = 'customer.html';
+        }
+      } else {
+        document.getElementById('login-error').textContent = result.message;
+      }
+    });
+    
+    // Handle register form submission
+    document.getElementById('registerForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const name = document.getElementById('register-name').value;
+      const email = document.getElementById('register-email').value;
+      const password = document.getElementById('register-password').value;
+      const confirm = document.getElementById('register-confirm').value;
+      
+      // Check if passwords match
+      if (password !== confirm) {
+        const messageEl = document.getElementById('register-message');
+        messageEl.textContent = 'Passwords do not match';
+        messageEl.className = 'error-message';
+        return;
+      }
+      
+      const result = DB.registerUser({
+        name,
+        email,
+        password
+      });
+      
+      const messageEl = document.getElementById('register-message');
+      if (result.success) {
+        messageEl.textContent = 'Registration successful! You can now login.';
+        messageEl.className = 'success-message';
+        document.getElementById('registerForm').reset();
+      } else {
+        messageEl.textContent = result.message;
+        messageEl.className = 'error-message';
+      }
+    });
+    
+    // Check if user is already logged in
+    window.addEventListener('DOMContentLoaded', function() {
+      const currentUser = DB.getCurrentUser();
+      if (currentUser) {
+        // Redirect based on user role
+        if (currentUser.role === 'admin') {
+          window.location.href = 'admin.html';
+        } else {
+          window.location.href = 'customer.html';
+        }
+      }
+    });
+  </script>
+</body>
+</html>

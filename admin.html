@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Portal - PestGuard Pro</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <button class="btn back-btn" onclick="window.location.href='index.html'">
+        <i class="fas fa-arrow-left"></i> Back to Home
+      </button>
+      <h1 class="app-title">Admin Dashboard</h1>
+      <p class="text-center">Manage pest control service appointments</p>
+    </div>
+    
+    <div class="tab">
+      <button class="tablinks active" onclick="openTab(event, 'PendingTab')">
+        <i class="fas fa-clock"></i> Pending Appointments
+      </button>
+      <button class="tablinks" onclick="openTab(event, 'AcceptedTab')">
+        <i class="fas fa-check-circle"></i> Accepted Appointments
+      </button>
+      <button class="tablinks" onclick="openTab(event, 'AllTab')">
+        <i class="fas fa-calendar-alt"></i> All Appointments
+      </button>
+    </div>
+    
+    <div id="PendingTab" class="tabcontent" style="display: block;">
+      <h2><i class="fas fa-hourglass-half"></i> Pending Appointments</h2>
+      <div id="pendingAppointments">
+        <!-- Pending appointments will be displayed here -->
+        <div class="empty-state" id="noPendingMessage" style="display: none;">
+          <i class="fas fa-clipboard-check empty-state-icon"></i>
+          <h3 class="empty-state-title">No pending appointments</h3>
+          <p>All appointment requests have been processed.</p>
+        </div>
+      </div>
+    </div>
+    
+    <div id="AcceptedTab" class="tabcontent">
+      <h2><i class="fas fa-calendar-check"></i> Accepted Appointments</h2>
+      <div id="acceptedAppointments">
+        <!-- Accepted appointments will be displayed here -->
+        <div class="empty-state" id="noAcceptedMessage" style="display: none;">
+          <i class="fas fa-calendar empty-state-icon"></i>
+          <h3 class="empty-state-title">No accepted appointments</h3>
+          <p>No appointments have been accepted yet.</p>
+        </div>
+      </div>
+    </div>
+    
+    <div id="AllTab" class="tabcontent">
+      <h2><i class="fas fa-list"></i> All Appointments</h2>
+      <div id="allAppointments">
+        <!-- All appointments will be displayed here -->
+        <div class="empty-state" id="noAppointmentsMessage" style="display: none;">
+          <i class="fas fa-calendar-times empty-state-icon"></i>
+          <h3 class="empty-state-title">No appointments</h3>
+          <p>No appointments have been scheduled yet.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Modal for accepting appointment -->
+  <div id="acceptModal" class="modal-backdrop" style="display: none;">
+    <div class="modal-container">
+      <div class="modal-header">
+        <h2 class="modal-title"><i class="fas fa-check"></i> Accept Appointment</h2>
+      </div>
+      <div class="modal-body">
+        <form id="acceptForm">
+          <input type="hidden" id="appointmentId">
+          
+          <div class="form-group">
+            <label for="technician" class="form-label">Technician Name</label>
+            <input type="text" id="technician" class="form-control" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="adminNotes" class="form-label">Notes for Customer</label>
+            <textarea id="adminNotes" class="form-control" rows="4"></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" onclick="closeModal()">
+          <i class="fas fa-times"></i> Cancel
+        </button>
+        <button type="submit" class="btn btn-success" form="acceptForm">
+          <i class="fas fa-check"></i> Accept
+        </button>
+      </div>
+    </div>
+  </div>
+  
+  <script src="db.js"></script>
+  <script src="adminScript.js"></script>
+</body>
+</html>
